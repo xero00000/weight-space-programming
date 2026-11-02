@@ -44,7 +44,7 @@ specified small ReLU network without training. Explain the unit assignments.
 
 ## Use the helpers
 
-The skill instructions themselves require no Python package installation. The optional scripts require PyTorch and safetensors:
+The skill instructions themselves require no Python package installation. The optional scripts require PyTorch, safetensors and NumPy:
 
 ```bash
 python3 -m venv .venv

@@ -1,6 +1,6 @@
 # Checkpoint helper
 
-Run `scripts/weights.py` relative to this skill's directory, using an environment with `torch` and `safetensors` installed. `requirements.txt` declares the dependencies; choose the PyTorch build appropriate to your system. The utility is CPU-only and never runs a model.
+Run `scripts/weights.py` relative to this skill's directory, using an environment with `torch`, `safetensors` and `numpy` installed. `requirements.txt` declares the dependencies; choose the PyTorch build appropriate to your system. The utility is CPU-only and never runs a model.
 
 ## Inspect and compare
 
