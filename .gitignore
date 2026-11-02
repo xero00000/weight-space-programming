@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.safetensors
+*.npz
+*.npy
+*.gguf
+*.pt
+*.pth
+*.manifest.json
+.wsp-*/

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Weight-Space Programming"
+  short_description: "Inspect and edit neural weights without training"
+  default_prompt: "Use $weight-space-programming to inspect this checkpoint, explain a concrete failure, and test a reversible weight edit without training."
