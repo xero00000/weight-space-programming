@@ -16,4 +16,12 @@ Released evidence: [RikiyaT/lm_understand-logs](https://github.com/RikiyaT/lm_un
 - A paper's budget unit can be a batched generation/evaluation request rather than one neural forward computation. Experiment 8 also permitted teacher-forced activation reads.
 - Sparse edits can have broad effects. A small touched fraction does not establish that unrelated capabilities are preserved.
 
-The skill's helper functions are engineering utilities for inspection, projection and comparison. Passing their tests validates those operations, not the article's empirical claims.
+## Algorithmic transformer construction
+
+Chandan Singh, **Weight-Space Programming from scratch on simple tasks**, November 2, 2026. [Report](https://csinva.io/weight-space-programming-autoresearch/analyze/toy_examples/report.html). Reviewed with [source snapshot `535cd6b1d881b7ce7124858244b768a63d6d2d5d`](https://github.com/csinva/weight-space-programming-autoresearch/tree/535cd6b1d881b7ce7124858244b768a63d6d2d5d), including the [agent instructions](https://github.com/csinva/weight-space-programming-autoresearch/blob/535cd6b1d881b7ce7124858244b768a63d6d2d5d/evolve/program.md) and [report source](https://github.com/csinva/weight-space-programming-autoresearch/blob/535cd6b1d881b7ce7124858244b768a63d6d2d5d/analyze/toy_examples/report.html).
+
+The report motivates the construction circuits and evaluation/accounting guidance in [transformer-construction.md](transformer-construction.md). It describes routing/counting attention, finite-domain MLP tables, residual-channel allocation and arithmetic mechanisms. It also identifies invalid language-task results from evaluation leakage and prohibited fitting, and misleading parameter reductions from constants moved into buffers. Fixed-seed task scores require independent verification, and architecture changes limit size comparisons. We retain bounded experiments rather than the upstream prompt's indefinite iteration policy.
+
+The examples in this skill are original, small implementations of these general circuit ideas; no upstream program, weights or dataset is bundled. Their exhaustive tests establish only their stated finite-domain behavior and tested dtypes. They do not reproduce the report's full experiment collection or validate its language-task scores.
+
+The checkpoint helpers are engineering utilities for inspection, projection and comparison. Passing their tests validates those operations, not either article's empirical claims.

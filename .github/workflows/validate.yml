@@ -23,9 +23,10 @@ jobs:
           front = yaml.safe_load(skill.split('---', 2)[1])
           assert front['name'] == 'weight-space-programming'
           assert isinstance(front['description'], str) and front['description'].strip()
-          for link in re.findall(r'\]\(([^)]+)\)', skill):
-              if not link.startswith(('https://', 'http://')):
-                  assert Path(link).is_file(), link
+          for path in [Path('SKILL.md'), Path('README.md'), *Path('references').glob('*.md')]:
+              for link in re.findall(r'\]\(([^)]+)\)', path.read_text()):
+                  if not link.startswith(('https://', 'http://', '#')):
+                      assert (path.parent / link).is_file(), (str(path), link)
           ui = yaml.safe_load(Path('agents/openai.yaml').read_text())
           assert '$weight-space-programming' in ui['interface']['default_prompt']
           PY

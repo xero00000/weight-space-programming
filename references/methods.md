@@ -30,6 +30,8 @@ Use a limited strength comparison when justified by the hypothesis. Avoid unboun
 
 ## Construct small networks
 
+For algorithmic transformer constructions, use [transformer-construction.md](transformer-construction.md). It covers attention routing/counting, ReLU tables, arithmetic circuits, architecture and size accounting, and bounded exhaustive examples. The guidance below also applies to small policies.
+
 Start with the exact state encoding and action mapping. Sketch a compact deterministic strategy: detect features, compute relations or short-range propagation, score actions. Assign units/layers and track their ranges. Set all intended weights and biases explicitly rather than leaving random unexplained paths.
 
 For binary features `x_i` in `{0,1}`, `ReLU(sum(x_i) - (k - 1))` implements an AND of `k` inputs. For tanh, choose margins that distinguish states without assuming that approximate outputs are exact Boolean values. Include sign, scale, saturation and numerical precision in the derivation. Preserve pass-through signals in ReLU networks with paired positive/negative channels if signed values are required.
